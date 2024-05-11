@@ -1,0 +1,413 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+*::selection {
+    color: white;
+    background-color: black;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+}
+
+/* NAV AGAIN  */
+
+#nav {
+    width: 100%;
+    /* height: 6vw; */
+    /* background-color: indigo; */
+    position: fixed;
+    z-index: 9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw 1.5vw;
+}
+
+.navpart1 {
+    /* background-color: red; */
+    height: 125px;
+    overflow: hidden;
+}
+
+.navpart1 svg {
+    display: block;
+
+}
+
+#svg2 {
+    margin-top: 105px;
+    margin-right: 20px;
+}
+
+.navpart2 {
+    /* width: 31%; */
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 1.5vw;
+    right: 1.5vw;
+    padding: 0vw 0;
+    align-items: center;
+
+}
+
+.links a {
+    /* padding: 0 3vw; */
+    /* margin-inline-end: 5vw; */
+    margin-inline-start: 3.7vw;
+    color: black;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 0.78vw;
+    /* transition: transform ease 0.2s; */
+}
+
+/* hover effect on link  */
+
+.navpart2 .links a:hover {
+    color: #5b5b5b;
+}
+
+
+/* #this is amazing  should be remembered  */
+
+
+.navpart2 .links a {
+    position: relative;
+}
+
+.navpart2 .links a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    background-color: #5b5b5b;
+    bottom: -2px;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+    margin-top: 1vw;
+}
+
+.navpart2 .links a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.links .arrow {
+    font-size: 1vw;
+    margin-inline-start: 0.1vw;
+    font-weight: 400;
+    align-self: baseline;
+}
+
+.navpart2 .icons {
+    border-radius: 30px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-inline-start: 4.7vw;
+    width: 10vw;
+}
+
+.navpart2 .icons i {
+    font-size: 1.1vw;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.6vw;
+}
+
+.navpart2 .icons i:hover {
+    color: black;
+    font-weight: 600;
+}
+
+
+
+/* this is the menu section css/////////////////////////////////////////////////////*/
+
+.menu {
+    position: relative;
+    margin-left: 2vw;
+}
+
+.menu i {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-100%, -50%);
+    color: black;
+}
+
+.close {
+    /* font-size: 1.1vw; */
+    margin-left: 5px;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////// */
+#cart {
+    transition: transform ease 0.3s;
+    display: inline-block;
+    margin-inline-start: 1.8vw;
+    margin-inline-end: 0.2vw;
+}
+
+#cart:hover {
+    transform: rotateY(-10deg) rotateZ(-10deg)
+}
+
+#menu {
+    /* transition: transform ease 0.3s; */
+    display: inline-block;
+    margin-inline-end: 1.8vw;
+    margin-inline-start: 0.2vw;
+}
+
+.equal h3 {
+    font-family: sans-serif;
+    font-size: 0.8vw;
+    font-weight: 500;
+    color: #363636;
+    margin-top: 20vh;
+    margin-bottom: 3vh;
+}
+
+.social {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.social2 {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.equal2 a {
+    margin-block: 0.18vw;
+    font-size: 0.95vw;
+    font-family: sans-serif;
+    color: black;
+    font-weight: 200;
+}
+
+.equal2 a:hover {
+    color: #5b5b5b;
+}
+
+/* NAV KE ANDAR KA NAV OR MENU M CLICK WALA  */
+
+.nav2 {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(0, -100%);
+    transition: transform ease 0.3s;
+    /* z-index: ; */
+    /* opacity: 0.4; */
+    /* transform: translate(0,-150%); */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1vw;
+
+}
+
+.nav2 .social2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nav2 .equal {
+    width: 30%;
+    /* background-color: grey; */
+    margin-bottom: 1.5vw;
+    padding-left: 1vw;
+}
+
+.nav2 .insidenav {
+    width: 40%;
+    /* background-color: rgb(187, 28, 28); */
+    height: 58%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: end;
+    margin-bottom: 1.5vw;
+
+}
+
+.insidenav a {
+    height: 100%;
+    width: auto;
+    font-size: 3.9vw;
+    font-family: futura;
+    padding-right: 1vw;
+    line-height: 3.4vw;
+    margin-block-end: -1.8vw;
+}
+
+.insidenav a:hover {
+    color: #5b5b5b;
+}
+
+.insidenav i {
+    margin-inline-start: -18px;
+    margin-inline-end: -15px;
+}
+
+.nav2 h3 {
+    color: #5b5b5b;
+}
+
+.nav2 a {
+    color: #f7f7f7;
+}
+
+
+
+
+
+/* SHOP PAGE 1 */
+
+#shoppage1 {
+    width: 98%;
+    min-height: 100vh;
+    /* background-color: rgb(197, 29, 29); */
+    padding-top: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: auto;
+    gap: 1vw;
+
+}
+
+.l-page1 {
+    width: 70%;
+   height: 100vh; 
+    /* background-color: white; */
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: auto;
+    padding-top: 2vw;
+    z-index: 5;
+
+}
+
+.l-page1 h1 {
+    font-size: 10vw;
+    font-family: futura;
+    line-height: 10vw;
+
+}
+
+.downarrow {
+    font-size: 15vw;
+    vertical-align: middle;
+    display: inline-block;
+    /* padding-top: 3vw; */
+    /* filter: blur(10px); */
+
+}
+.rotated{
+    transform: rotateX(-180deg);
+}
+
+/* .l-page1 i:hover{
+    transform: rotateX(-180deg);
+} */
+
+.upperDets{
+    /* border-bottom: 5px solid black; */
+    width: 81%;
+    position: relative;
+}
+.upperDets::before{
+    content: '';
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform ease 0.3s;
+}
+.upperDets:hover::before{
+    transform-origin: left;
+    transform: scaleX(1);
+    
+}
+/* left wale m jo down arrow hai usko click karne ka effect */
+.downDets{
+    display: none;
+}
+.displayDownDets{
+    display: block;
+}
+
+.r-page1 {
+    width: 30%;
+    height: 100vh;
+    /* background-color: green; */
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-top: 3vw;
+}
+/* to make blur  used in toggle()*/
+.blur{
+    filter: blur(20px);
+}
+
+.r-page1 p{
+    width: 90%;
+    font-size: 1vw;
+    font-family: sans-serif;
+    font-weight: 300;
+    line-height: 1.3vw;
+}
+
+/* page 2 */
+
+#shoppage2{
+    width: 97%;
+    height: 100vh;
+    margin-inline: auto;
+    background-color: red;
+    margin-top: -13vw;
+}
