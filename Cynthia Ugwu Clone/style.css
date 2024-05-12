@@ -1,0 +1,599 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: relative;
+}
+
+:root {
+    --text-color: #fff;
+    --heading-color: #A3A3A3;
+    --big-font: "General Sans Medium";
+    --small-font: "General Sans";
+
+}
+
+
+
+ /* @@@@@@@@@@@@@@@@@@@@@@@@@  cursor  @@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    z-index: 50;
+    mix-blend-mode: difference;
+}
+
+
+#top {
+    width: 80px;
+    height: 260px;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    transform: translate(0, -50%);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7vw 0;
+    font-family: var(--big-font);
+    z-index: 10;
+}
+
+#top h2 {
+    font-size: 1.4vw;
+}
+
+#top h4 {
+    font-size: 0.9vw;
+    transform: rotateZ(-90deg);
+    margin-bottom: 1.5vw;
+    font-weight: 600;
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@    LOADING PAGE   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+#loading-page {
+    font-family: var(--small-font);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    z-index: 999;
+    background-color: var(--heading-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+    transition: transform ease 0.6s;
+    opacity: 1;
+}
+
+.loading-container {
+    width: 90px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.loader {
+    width: 0;
+    height: 100%;
+    background-color: #000;
+    border: 10px;
+}
+
+.percentage {
+
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+.name {
+
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@ nav time @@@@@@@@@@@@@@@@@@@@@@@@ */
+
+#nav{
+    width: 100%;
+    height: 5vw;
+    background-color: #000;
+    padding: 2vw 3.5vw;
+    display: flex;
+    position: fixed;
+    z-index: 555;
+    margin-bottom: 3vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav h3{
+    font-family: var(--small-font);
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.2vw;
+    z-index: 1000;
+}
+#nav a{
+    font-family: var(--small-font);
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.1vw;
+    transition: display ease 0.2s;
+    margin-top: auto;
+}
+
+/* #  hover effect   */
+
+#nav a::after{
+    content: "";
+    width: 100%;
+    transform-origin: right;
+    height: 1.5px;
+    display: inline-block;
+    transform: scaleX(0);
+    transition: transform ease 0.3s;
+    margin-bottom: 24px;
+    background-color: var(--text-color);
+}
+
+#nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
+
+/* @@@@@@@@@@@@@@@@@@@@ nav ke andar ki details  @@@@@@@@@@@@ */
+
+.nav-dets{
+    width: 80%;
+    height: 5vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #000;
+    z-index: 560;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2.5vw;
+    padding-right:  3.5vw;
+    transform: translateY(-100%);
+}
+
+.nav-dets a{
+    font-family: var(--small-font);
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.1vw;
+    margin-top: auto;
+}
+
+/* # hover effect  */
+
+
+.nav-dets a::after{
+    content: "";
+    width: 100%;
+    transform-origin: right;
+    height: 1.5px;
+    display: inline-block;
+    transform: scaleX(0);
+    transition: transform ease 0.3s;
+    margin-bottom: 24px;
+    background-color: var(--text-color);
+}
+
+.nav-dets a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* @@@@@@@@@@@@@@@@@@@  Page 1  @@@@@@@@@@@@@@ */
+
+#page1 {
+    width: 94%;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+.headings {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    top: 45%;
+    transform: translate(0, -40%);
+    gap: 0.3vw;
+}
+
+.headings h1 {
+    font-family: var(--big-font);
+    color: var(--heading-color);
+    font-size: 10.5vw;
+    line-height: 8.5vw;
+    font-weight: 400;
+}
+
+.headings .h2 {
+    text-align: right;
+    margin-left: 11vw;
+    line-height: 5vw;
+}
+
+.headings .h2 h3 {
+    font-family: var(--small-font);
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #fff;
+}
+
+.middle {
+    width: 100%;
+    /* height: 20vh; */
+    position: absolute;
+    top: 82%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.middle h3 {
+    font-family: var(--small-font);
+    font-size: 1.1vw;
+    color: var(--text-color);
+    font-weight: 600;
+    line-height: 2vw;
+
+}
+
+#bottom-icon {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+
+#bottom-icon h3::after {
+    content: "";
+    width: 100%;
+    transform-origin: right;
+    height: 2px;
+    display: inline-block;
+
+    transform: scaleX(0);
+    transition: transform ease 0.3s;
+    margin-bottom: 15px;
+    background-color: var(--text-color);
+}
+
+#bottom-icon h3:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
+
+#bottom-icon h3 {
+    font-family: var(--small-font);
+    font-size: 1.05vw;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.icon {
+    font-size: 1.1vw;
+    vertical-align: text-bottom;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.arrow i {
+    padding: 11px;
+    font-size: 1vw;
+    background-color: var(--heading-color);
+    border-radius: 50%;
+    font-weight: 600;
+
+}
+
+
+
+          /* @@@@@@@@@@@@@@@@@@@@    page2    @@@@@@@@@@@@@@@@@@ */
+
+#page2 {
+    width: 94%;
+    margin-inline: auto;
+    margin-top: 15vw;
+    /* background-color: blue; */
+    min-height: 100vh;
+}
+
+.div {
+    width: 90%;
+    padding: 3vw 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--heading-color);
+    position: relative;
+}
+
+.div:nth-child(3) {
+
+    border-bottom: 2px solid var(--heading-color);
+}
+
+.div h1 {
+    font-family: var(--big-font);
+    color: var(--heading-color);
+    font-size: 7.5vw;
+    font-weight: 500;
+    transition: transform ease 0.7s;
+
+}
+
+.div h4 {
+    font-family: var(--small-font);
+    color: var(--text-color);
+    font-size: 1.1vw;
+    font-weight: 500;
+    transition: opacity ease-in-out 0.5s;
+}
+
+.img {
+    height: 550px;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    opacity: 0;
+    transition: all linear 0.3s;
+    transform: translate(-0%, -50%);
+    z-index: 11;
+}
+
+
+
+        /* @@@@@@@@@@@@@@@@@@  PAGE-3   @@@@@@@@@@@@@@@@@@@ */
+
+#page3 {
+    width: 94%;
+    margin-inline: auto;
+    min-height: 70vh;
+    margin-top: 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-3 {
+    width: 55%;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.designerimg {
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    background-color: #400977;
+    margin-bottom: 3vw;
+    margin-right: 1vw;
+    overflow: hidden;
+
+}
+
+.designerimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.right-3 {
+    width: 40%;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content-3 {
+    width: 80%;
+}
+
+.content-3 h4 {
+    font-family: var(--small-font);
+    font-size: 1vw;
+    font-weight: 500;
+    color: var(--heading-color);
+    margin-bottom: 0.5vw;
+}
+
+.content-3 p {
+    font-family: var(--small-font);
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.8vw;
+}
+
+.content-3 button {
+    font-family: var(--small-font);
+    font-size: 1vw;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 1.3vw;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    padding: 0.4vw 1.5vw;
+    border-radius: 50px;
+    transition: all ease-in 0.3s;
+
+}
+.content-3 button:hover{
+    background: #fff;
+    color: #000;
+}
+
+
+
+/* @@@@@@@@@@@    PAGE-3-DOWN       @@@@@@@@@@@@ */
+
+.page3down {
+    width: 94%;
+    height: 10vh;
+    margin-inline: auto;
+    margin-top: 5vw;
+}
+
+.page3down h4 {
+    font-family: var(--small-font);
+    font-size: 1vw;
+    font-weight: 500;
+    color: var(--heading-color);
+    margin-bottom: 0.2vw;
+}
+
+.page3down h3 {
+    font-family: var(--small-font);
+    font-size: 1.05vw;
+    font-weight: 600;
+    color: var(--text-color);
+    display: inline-block;
+}
+
+.page3down h3::after {
+    content: "";
+    width: 100%;
+    transform-origin: right;
+    height: 2px;
+    display: inline-block;
+
+    transform: scaleX(0);
+    transition: transform ease 0.3s;
+    margin-bottom: 15px;
+    background-color: var(--text-color);
+}
+
+.page3down h3:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
+
+
+
+     /* @@@@@@@@@@@@@@@@@@@@@    FOOTER  @@@@@@@@@@@@@@@@@@@ */
+
+
+#footer {
+    width: 94%;
+    margin-inline: auto;
+    height: 8vh;
+    margin-top: 9vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.footer-left {
+    display: flex;
+    gap: 2vw;
+}
+
+.footer-left h3 {
+    font-family: var(--small-font);
+    font-size: 1.05vw;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.footer-left .time {
+    font-family: var(--small-font);
+    font-size: 1.05vw;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+
+.footer-right {
+    display: flex;
+
+    /* isne to kamal hi kar diya bhai => margin-top */
+    margin-top: auto;
+    gap: 3vw;
+}
+
+.footer-right a {
+    font-family: var(--small-font);
+    font-size: 0.95vw;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.footer-right a::after {
+    content: "";
+    width: 100%;
+    transform-origin: right;
+    height: 0.5px;
+    display: inline-block;
+    transform: scaleX(0);
+    transition: transform ease 0.3s;
+    margin-bottom: 20px;
+    background-color: var(--text-color);
+}
+
+.footer-right a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
+
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@    MAKING RESPONSIVE    @@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width : 600px){
+ 
+}
